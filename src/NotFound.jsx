@@ -1,13 +1,14 @@
 const NotFound = () => {
+
   return (
-    <main className="container">
+    <header className="container">
       <div className="row justify-content-center mt-3 mb-4">
         <div className="col-8">
-          <h1 className="text-danger">Error 404: Page Not Found</h1>
+          <h1 class="text-danger">404 - Page not found</h1>
         </div>
       </div>
-    </main>
+    </header>
   )
-}
 
+}
 export default NotFound

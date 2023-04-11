@@ -1,12 +1,9 @@
 import { useState } from 'react';
 
-
 const GroupedTeamMembers = ({ employees, selectedTeam, setTeam }) => {
 
   const [groupedEmployees, setGroupedData] = useState(groupTeamMembers());
-  // make feature to group all members from team together
-  // clicking opens the group displaying all members name from that team
-  // fetch data from employees, filter according to group names
+
   function groupTeamMembers() {
     var teams = [];
 
@@ -26,14 +23,14 @@ const GroupedTeamMembers = ({ employees, selectedTeam, setTeam }) => {
     var teamD = { team: 'TeamD', members: teamDMembers, collapsed: selectedTeam === 'TeamD' ? false : true }
     teams.push(teamD);
 
-
     return teams;
 
   }
 
   function handleTeamClick(event) {
-    var transformedGroupData = groupedEmployees.map((groupedData) => groupedData.team === event.currentTarget.id ? { ...groupedData, collapsed: !groupedData.collapsed } : groupedData);
-
+    var transformedGroupData = groupedEmployees.map((groupedData) => groupedData.team === event.currentTarget.id
+      ? { ...groupedData, collapsed: !groupedData.collapsed }
+      : groupedData);
     setGroupedData(transformedGroupData);
     setTeam(event.currentTarget.id);
   }
@@ -44,30 +41,32 @@ const GroupedTeamMembers = ({ employees, selectedTeam, setTeam }) => {
         groupedEmployees.map((item) => {
           return (
             <div key={item.team} className='card mt-2' style={{ cursor: "pointer" }}>
-              <h4 id={item.team} className='card-header text-secondary bg-white' onClick={handleTeamClick}>
+              <h4 id={item.team} className="card-header text-secondary bg-white" onClick={handleTeamClick}>
                 Team Name: {item.team}
               </h4>
-              <div id={"collapse_" + item.team} className={item.collapsed === true ? "collapse" : " "}>
+              <div id={"collapse_" + item.team}
+                className={item.collapsed === true ? "collapse" : ""}>
                 <hr />
                 {
                   item.members.map(member => {
                     return (
                       <div className="mt-2">
                         <h5 className="card-title mt-2">
-                          <span className='text-dark'>Full Name: {member.fullName}</span>
+                          <span className="text-dark">Full Name: {member.fullName}</span>
                         </h5>
                         <p>Designation: {member.designation}</p>
                       </div>
-                    )
+                    );
                   })
                 }
               </div>
+              <hr />
             </div>
-          )
+          );
         })
       }
     </main>
   )
-}
 
+}
 export default GroupedTeamMembers

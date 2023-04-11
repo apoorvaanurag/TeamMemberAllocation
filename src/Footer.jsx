@@ -1,8 +1,7 @@
 const Footer = () => {
 
   var today = new Date();
-  
-  
+
   return (
     <footer className="container">
       <div className="row justify-content-center mt-3 mb-4">
@@ -12,6 +11,6 @@ const Footer = () => {
       </div>
     </footer>
   )
-}
 
+}
 export default Footer
