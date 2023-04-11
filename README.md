@@ -1,17 +1,12 @@
-## Running React on Repl.it
+# Team Member Allocation App
+This is a web-based application that allows you to easily allocate team members to different teams. It is built entirely in JavaScript using the React framework.
 
-[React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
+The main features of this app are:
 
-[Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
+* **Dropdown to Select Teams:** Users can choose the team they want to work with from a dropdown menu. The app will display the team members assigned to that team.
 
-Using the two in conjunction is one of the fastest ways to build a web app.
+* **Team Member Cards:** Each team member is represented by a card that displays their name and other details. Users can drag and drop these cards to reassign team members to different teams.
 
-### Getting Started
-- Hit run
-- Edit [App.jsx](#src/App.jsx) and watch it live update!
+* **Team Member Count:** Clicking on a team name displays the number of members in that team.
 
-By default, Replit runs the `dev` script, but you can configure it by changing the `run` field in the [configuration file](#.replit). Here are the vite docs for [serving production websites](https://vitejs.dev/guide/build.html)
-
-### Typescript
-
-Just rename any file from `.jsx` to `.tsx`. You can also try our [TypeScript Template](https://replit.com/@replit/React-TypeScript)
+* **Grouped Members:** On the teams page, members are grouped according to their team.
